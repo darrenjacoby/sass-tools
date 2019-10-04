@@ -13,9 +13,9 @@ NPM package of Sass tools for more structured, reusable and functional CSS.
 Download and `@import` the packages;
 
 ```shell
-yarn add @soberdev/sass-tools
+yarn add @soberwp/sass-tools
 ```
 
 ```scss
-@import "~@soberdev/sass-tools";
+@import "~@soberwp/sass-tools";
 ```
