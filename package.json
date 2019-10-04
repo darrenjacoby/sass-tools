@@ -1,0 +1,32 @@
+{
+  "name": "@soberwp/sass-tools",
+  "version": "0.0.0",
+  "description": "Sass tools for more structured, reusable and functional CSS",
+  "license": "MIT",
+  "repository": "soberwp/sass-tools",
+  "main": "main.scss",
+  "keywords": [
+    "scss",
+    "sass",
+    "scss-mixin",
+    "sass-mixin"
+  ],
+  "scripts": {
+    "release": "release-it"
+  },
+  "release-it": {
+    "github": {
+      "release": true
+    }
+  },
+  "devDependencies": {
+    "release-it": "^12.4.1"
+  },
+  "dependencies": {
+    "@soberwp/sass-fl": "^0.1.0",
+    "@soberwp/sass-fs": "^0.1.0",
+    "@soberwp/sass-mq": "^0.1.0",
+    "@soberwp/sass-get": "^0.1.0",
+    "@soberwp/sass-util": "^0.1.0",
+  }
+}
