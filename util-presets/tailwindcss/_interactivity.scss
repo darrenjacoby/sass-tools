@@ -1,0 +1,29 @@
+$utils: (
+  // appearance
+  appearance-none: (appearance: none),
+  // cursor
+  cursor-auto: (cursor: auto),
+  cursor-default: (cursor: default),
+  cursor-pointer: (cursor: pointer),
+  cursor-wait: (cursor: wait),
+  cursor-text: (cursor: text),
+  cursor-move: (cursor: move),
+  cursor-not-allowed: (cursor: not-allowed),
+  // outline
+  outline-none: (outline: 0),
+  // pointer-events
+  pointer-events-none: (pointer-events: none),
+  pointer-events-auto: (pointer-events: auto),
+  // resize
+  resize-none: (resize: none),
+  resize: (resize: both),
+  resize-y: (resize: vertical),
+  resize-x: (resize: horizontal),
+  // user-select
+  select-none: (user-select: none),
+  select-text: (user-select: text),
+  select-all: (user-select: all),
+  select-auto: (user-select: auto),
+);
+
+@include util-add($utils);

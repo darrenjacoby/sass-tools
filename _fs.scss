@@ -1,1 +1,27 @@
-@import "~@soberwp/sass-fs";
+/**
+ * @include fs()
+ *
+ * @requires @mixin fl()
+ * @params $font-size, $ratio, $screen-min, $screen-max
+ */
+@mixin fs($font-size, $ratio: $fl-ratio, $screen-min: $fl-screen-min, $screen-max: $fl-screen-max) {
+  // check if user is using the $font-sizes map key
+  @if (map-get($font-sizes, $font-size)) {
+    $map: map-get($font-sizes, $font-size);
+
+    // get the font-size from $map
+    @if map-has-key($map, size) {
+      $font-size: map-get($map, size);
+    }
+
+    // if there is not a custom ratio being passed in
+    @if ($ratio == $fl-ratio) {
+      // then get the ratio from $map
+      @if map-has-key($map, ratio) {
+        $ratio: map-get($map, ratio);
+      }
+    }
+  }
+
+  @include fl(font-size, $font-size, $ratio, $screen-min, $screen-max);
+}

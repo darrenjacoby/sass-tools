@@ -1,0 +1,66 @@
+$utils: (
+  // display
+  block: (display: block),
+  inline-block: (display: inline-block),
+  inline: (display: inline),
+  flex: (display: flex),
+  inline-flex: (display: inline-flex),
+  table: (display: table),
+  table-row: (display: table-row),
+  table-cell: (display: table-cell),
+  hidden: (display: hidden),
+  // floats
+  float-right: (float: right),
+  float-left: (float: left),
+  float-none: (float: none),
+  // object-fit
+  object-contain: (object-fit: contain),
+  object-cover: (object-fit: cover),
+  object-fill: (object-fit: fill),
+  object-none: (object-fit: none),
+  object-scale-down: (object-fit: scale-down),
+  // object-position
+  object-bottom: (object-position: bottom),
+  object-center: (object-position: center),
+  object-left: (object-position: left),
+  object-left-bottom: (object-position: left bottom),
+  object-left-top: (object-position: left top),
+  object-right: (object-position: right),
+  object-right-bottom: (object-position: right bottom),
+  object-right-top: (object-position: right top),
+  object-top: (object-position: top),
+  // overflow
+  overflow-auto: (overflow: auto),
+  overflow-hidden: (overflow: hidden),
+  overflow-visible: (overflow: visible),
+  overflow-scroll: (overflow: scroll),
+  overflow-x-auto: (overflow-x: auto),
+  overflow-y-auto: (overflow-y: auto),
+  overflow-x-hidden: (overflow-x: hidden),
+  overflow-y-hidden: (overflow-y: hidden),
+  overflow-x-visible: (overflow-x: visible),
+  overflow-y-visible: (overflow-y: visible),
+  overflow-x-scroll: (overflow-x: scroll),
+  overflow-y-scroll: (overflow-y: scroll),
+  scrolling-touch: (-webkit-overflow-scrolling: touch),
+  scrolling-auto: (-webkit-overflow-scrolling: auto),
+  // position
+  static: (position: static),
+  fixed: (position: fixed),
+  absolute: (position: absolute),
+  relative: (position: relative),
+  sticky: (position: sticky),
+  // visibility
+  visible: (visibility: visible),
+  invisible: (visibility: hidden),
+  // z-index
+  z-0: (z-index: 0),
+  z-10: (z-index: 10),
+  z-20: (z-index: 20),
+  z-30: (z-index: 30),
+  z-40: (z-index: 40),
+  z-50: (z-index: 50),
+  z-auto: (z-index: auto),
+);
+
+@include util-add($utils);

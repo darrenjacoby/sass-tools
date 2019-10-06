@@ -1,1 +1,53 @@
-@import "~@soberwp/sass-fl";
+/**
+ * Private: _unitless()
+ *
+ * @params $value
+ */
+ @function _unitless($val) {
+  @return $val / ($val * 0 + 1);
+}
+
+/**
+ * calc-rem()
+ *
+ * @params $size
+ */
+@function calc-rem($size) {
+  @if (unit($size) == "px") {
+    /* stylelint-disable-next-line length-zero-no-unit */
+    $size: ($size / 16px) + 0rem;
+  }
+
+  @return $size;
+}
+
+/**
+ * @include fl()
+ *
+ * @requires _calc-rem, _get-unitless
+ * @params $props, $max-value, $ratio, $screen-min, $screen-max
+ * @link http://www.sassmeister.com/gist/7f22e44ace49b5124eec
+ */
+@mixin fl($props, $max-value, $ratio: $fl-ratio, $screen-min: $fl-screen-min, $screen-max: $fl-screen-max) {
+  $min-value: $max-value / $ratio;
+
+  @if ($ratio < 0) {
+    $min-value: $max-value * ($ratio * -1);
+  }
+
+  @each $prop in $props {
+    #{$prop}: $min-value;
+  }
+
+  @media (min-width: $screen-min) {
+    @each $prop in $props {
+      #{$prop}: calc(#{calc-rem($min-value)} + #{_unitless(calc-rem($max-value) - calc-rem($min-value))} * (100vw - #{calc-rem($screen-min)}) / #{_unitless(calc-rem($screen-max) - calc-rem($screen-min))});
+    }
+  }
+
+  @media (min-width: $screen-max) {
+    @each $prop in $props {
+      #{$prop}: $max-value;
+    }
+  }
+}

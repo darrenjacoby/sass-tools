@@ -1,1 +1,68 @@
-@import "~@soberwp/sass-util";
+$_utils: ();
+
+/**
+ * Private: @include _util-css
+ *
+ * @params $props
+ */
+@mixin _util-css($props) {
+  // many
+  @if (type-of(nth($props, 1)) == list) {
+    @each $prop in $props {
+      #{nth($prop, 1)}: nth($prop, 2);
+    }
+  }
+  // one
+  @else {
+    #{nth($props, 1)}: nth($props, 2);
+  }
+}
+
+/**
+ * @include util-add()
+ *
+ * @params $utils-map, $breakpoints-map: $breakpoints
+ */
+@mixin util-add($util-map) {
+  $_utils: map-merge($_utils, $util-map) !global;
+}
+
+/**
+ * @include util()
+ *
+ * @params $util-keys, $utils-map: $utils
+ */
+@mixin util($util-props, $utils-map: $_utils) {
+  @each $util-prop in $util-props {
+    @if (map-get($utils-map, $util-prop)) {
+      $map-item: map-get($utils-map, $util-prop);
+
+      @each $props in $map-item {
+        @include _util-css($props);
+      }
+    }
+  }
+}
+
+/**
+ * @include util-classes()
+ *
+ * @params $utils-map, $breakpoints-map: $breakpoints
+ */
+@mixin util-classes($utils-map: $_utils, $breakpoints-map: $breakpoints) {
+  @each $class, $props in $utils-map {
+    .#{$class} {
+      @include _util-css($props);
+    }
+  }
+
+  @each $mq in map-keys($breakpoints-map) {
+    @media (min-width: map-get($breakpoints-map, $mq)) {
+      @each $class, $props in $utils-map {
+        .#{$mq}\:#{$class} {
+          @include _util-css($props);
+        }
+      }
+    }
+  }
+}

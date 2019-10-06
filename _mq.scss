@@ -1,1 +1,37 @@
-@import "~@soberwp/sass-mq";
+/**
+ * @include mq()
+ *
+ * @params $breakpoint, $breakpoints-map: $breakpoints
+ */
+@mixin mq($breakpoint, $breakpoints-map: $breakpoints) {
+  @if map-has-key($breakpoints-map, $breakpoint) {
+    @media (min-width: map-get($breakpoints-map, $breakpoint)) {
+      @content;
+    }
+  }
+
+  @else {
+    @media (min-width: $breakpoint) {
+      @content;
+    }
+  }
+}
+
+/**
+ * @include mq-down()
+ *
+ * @params $breakpoint, $breakpoints-map: $breakpoints
+ */
+@mixin mq-down($breakpoint, $breakpoints-map: $breakpoints) {
+  @if map-has-key($breakpoints-map, $breakpoint) {
+    @media (max-width: map-get($breakpoints-map, $breakpoint)) {
+      @content;
+    }
+  }
+
+  @else {
+    @media (max-width: $breakpoint) {
+      @content;
+    }
+  }
+}
