@@ -25,4 +25,4 @@ yarn add @soberwp/sass-tools
 * [@include fs()](https://github.com/soberwp/sass-tools/fs)
   * Fluid font sizes using a ratio between a min and max screen width.
 * [@include mq()](https://github.com/soberwp/sass-tools/mq)
-  * Tiny and smart media wrapper for faster coding.
+  * Tiny and smart media wrapper for faster implementation.
