@@ -17,10 +17,10 @@ $breakpoints: (
 );
 ```
 
-Next up, create a `$utils` map with some utilities, such as commonly used flex utils;
+Next up, create a map such as `$flex` for flexbox utilities;
 
 ```scss
-$utils: (
+$flex: (
   flex: (display: flex),
   flex-row: (flex-direction: row),
   flex-row-reverse: (flex-direction: row-reverse),
@@ -51,7 +51,7 @@ $utils: (
   justify-around: (justify-content: space-around),
 );
 
-@include util-add($utils);
+@include util-add($flex);
 ```
 
 ## Usage
@@ -61,14 +61,14 @@ $utils: (
 If you have used [tailwindcss](https://tailwindcss.com/), then you have likely used `@apply`. This works in the same way by including your util properties.
 
 ```scss
-.flex-wrap-center-between {
+.flex-wrap-center {
   @include util(flex flex-wrap items-center justify-between);
 }
 ```
 
 #### `@include util-classes()`
 
-By default, `util-classes()` will create all utils added to `util-add()`. 
+`util-classes()` will by default create all maps added to `util-add()`. 
 
 ```scss
 @include util-classes();
@@ -86,7 +86,7 @@ $custom-utils: (
 );
 
 $custom-breaks: (
-  w100: 100rem, 
+  w100: 100rem,
   w200: 100rem
 );
 
