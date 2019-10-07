@@ -1,6 +1,6 @@
 {
   "name": "@soberwp/sass-tools",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Sass tools for creating config and utility first frameworks",
   "license": "MIT",
   "repository": "soberwp/sass-tools",
