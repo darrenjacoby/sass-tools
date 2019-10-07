@@ -2,7 +2,7 @@
 
 Four useful tools for creating config and utility first frameworks. 
 
-Take a look at the [sass-starter](https://github.com/soberwp/sass-starter) to see how it comes together.
+Take a look at [sass-starter](https://github.com/soberwp/sass-starter) to see how it comes together in a starter.
 
 ## Installation
 
