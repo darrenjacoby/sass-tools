@@ -3,7 +3,7 @@
  *
  * @params $value
  */
- @function _unitless($val) {
+@function _unitless($val) {
   @return $val / ($val * 0 + 1);
 }
 
