@@ -1,5 +1,7 @@
 # sass-tools
 
+**Deprecated in favour of PostCSS plugins.**
+
 Sass tools to help with reusability and reducing CSS codebases.
 
 Take a look at [sass-starter](https://github.com/soberwp/sass-starter) to see how it comes together in a starter.
